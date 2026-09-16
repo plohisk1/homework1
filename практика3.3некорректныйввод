@@ -1,0 +1,5 @@
+Введите первое число: abc
+Traceback (most recent call last):
+  File "main.py", line 6, in <module>
+    num1 = int(num1)
+ValueError: invalid literal for int() with base 10: 'abc'
