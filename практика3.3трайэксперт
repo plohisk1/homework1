@@ -1,0 +1,13 @@
+
+try:
+    num1 = input("Введите первое число: ")
+    num2 = input("Введите второе число: ")
+
+    num1 = int(num1)
+    num2 = int(num2)
+
+    result = num1 + num2
+    print("Результат:", num1, "+", num2, "=", result)
+
+except ValueError:
+    print("Ошибка! Введите корректные целые числа, например: 5 или 10.")
