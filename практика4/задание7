@@ -1,0 +1,4 @@
+seat = int(input())
+
+brbrbr = (seat - 1) // 4 + 1
+print(brbrbr)
