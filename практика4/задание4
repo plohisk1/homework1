@@ -1,0 +1,9 @@
+
+students = int(input())   # n школьников
+mandarins = int(input())  # k мандаринов
+
+MANDARINKI = mandarins // students   # сколько достанется каждому
+SHKOLNIKI = mandarins % students  # сколько останется в корзине
+
+print(MANDARINKI)
+print(SHKOLNIKI)
