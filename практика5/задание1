@@ -1,32 +1,23 @@
-
 STAVKA_NALOGA = 0.13
-
 
 def poschitat_nalog(dohod):
     #Считает сумму налога по доходу.
     return dohod * STAVKA_NALOGA
 
-
 def na_ruki(dohod):
     #Считает сколько останется после вычета налога.
     return dohod - poschitat_nalog(dohod)
-
 
 def okruglit(summa):
     #Округляет сумму и разделяет тысячи чтобы было красиво.
     s = f"{summa:,.2f}"
     return s.replace(",", " ")
 
+#Программа считает подоходный налог по годовому доходу.
+dohod = float(input("Введите ваш годовой доход: "))
+nalog = poschitat_nalog(dohod)
+vyplata = na_ruki(dohod)
 
-def main():
-    #Программа считает подоходный налог по годовому доходу.
-    dohod = float(input("Введите ваш годовой доход: "))
-    nalog = poschitat_nalog(dohod)
-    vyplata = na_ruki(dohod)
-
-    print("Общая сумма дохода:", okruglit(dohod), "руб.")
-    print("Сумма налога:", okruglit(nalog), "руб.")
-    print("Сумма «на руки»:", okruglit(vyplata), "руб.")
-
-
-main()
+print("Общая сумма дохода:", okruglit(dohod), "руб.")
+print("Сумма налога:", okruglit(nalog), "руб.")
+print("Сумма «на руки»:", okruglit(vyplata), "руб.")
