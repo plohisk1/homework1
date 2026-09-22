@@ -1,0 +1,20 @@
+
+FUEL_PRICE = 49.5  # цена за литр бензина, руб.
+
+
+def fuel_needed(distance_km, liters_per_100):
+    """Возвращает, сколько литров бензина нужно на всю поездку."""
+    return distance_km * (liters_per_100 / 100)
+
+def cost(distance_km, liters_per_100):
+    """Возвращает стоимость бензина на поездку."""
+    return fuel_needed(distance_km, liters_per_100) * FUEL_PRICE
+
+distance_km = float(input("Какое расстояние (км)? "))
+liters_per_100 = float(input("Сколько литров на 100 км ест машина? "))
+
+total_liters = fuel_needed(distance_km, liters_per_100)
+total_cost = cost(distance_km, liters_per_100)
+
+print("Нужно бензина:", f"{total_liters:.2f} л")
+print("Стоимость:", f"{total_cost:.2f} руб.")
