@@ -1,0 +1,10 @@
+
+ves, rost = map(float, input("Введите вес (кг) и рост (м) через пробел: ").split())
+
+def raschet_imt(ves, rost):
+    """ Считает индекс массы тела: вес / (рост * рост). """
+    return ves / (rost * rost)
+
+imt = raschet_imt(ves, rost)
+
+print("Ваш индекс массы тела:", f"{imt:.1f}")
