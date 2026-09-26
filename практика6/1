@@ -1,0 +1,10 @@
+temperaturra = int(input("Введите темературу: "))               #Температура (°C)
+davlenie = int(input("Введите давление: "))                     #Давление (верхнее)
+pulse = int(input("Введите пульс: "))                             #Пульс (уд/мин)
+
+if temperaturra >= 36 and temperaturra <= 37 and davlenie >= 110 and davlenie <= 130 and pulse >= 60 and pulse <= 100:
+    print("Нормальное состояние")
+elif temperaturra >= 35 and temperaturra <= 36 and temperaturra >= 37 or temperaturra <=38 and davlenie >= 105 and davlenie <= 110 or davlenie >=130 and davlenie <=140 and pulse >= 55 and pulse <= 60 or pulse >= 100 and pulse <=110:
+    print("Легкое недомогание")
+else:
+    print("Требуется врач")
