@@ -1,0 +1,17 @@
+
+MIN = 0
+MAX = 36
+
+nomer = int(input("Номер кармана: "))
+
+if MIN <= nomer <= MAX:           
+    if nomer == 0:
+        color = "зелёный"
+    elif (1 <= nomer <= 10 or 19 <= nomer <= 28) and nomer % 2 == 1 or \
+         (11 <= nomer <= 18 or 29 <= nomer <= 36) and nomer % 2 == 0:
+        color = "красный"
+    else:
+        color = "чёрный"
+    print(f"Карман {nomer} — {color}.")
+else:
+    print("ошибка ввода")
