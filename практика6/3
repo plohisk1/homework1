@@ -1,0 +1,16 @@
+MIN = 1
+MAX = 8
+
+c1 = int(input("Столбец первой клетки: "))
+r1 = int(input("Строка первой клетки: "))
+c2 = int(input("Столбец второй клетки: "))
+r2 = int(input("Строка второй клетки: "))
+
+if MIN <= c1 <= MAX and MIN <= r1 <= MAX and MIN <= c2 <= MAX and MIN <= r2 <= MAX:
+    
+    if (c1 + r1) % 2 == (c2 + r2) % 2:
+        print("YES")
+    else:
+        print("NO")
+else:
+    print("ошибка ввода")
