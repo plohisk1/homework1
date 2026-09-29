@@ -1,0 +1,32 @@
+PRICE = {"1": 120, "2": 80, "3": 100, "4": 50, "5": 90}
+NAME = {"1": "Кофе ☕", "2": "Чай 🍵", "3": "Сок 🧃", "4": "Вода 💧",
+        "5": "Лимонад 🥤"}
+
+
+def order(n):
+    match n.lower():
+        case "1" | "кофе": return "1"
+        case "2" | "чай": return "2"
+        case "3" | "сок": return "3"
+        case "4" | "вода": return "4"
+        case "5" | "лимонад": return "5"
+        case _: return None
+
+
+def pword(n):
+    if n % 10 == 1 and n % 100 != 11: return "порция"
+    if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14: return "порции"
+    return "порций"
+
+
+code = order(input("Напиток (1–5 или название): "))
+qty = int(input("Количество порций: "))
+
+if code and qty > 0:
+    total = PRICE[code] * qty
+    print("=" * 40)
+    print(f"  {NAME[code]} x{qty} {pword(qty)} = {total} руб.")
+    print(f"  К оплате: {total} руб.")
+    print("=" * 40)
+else:
+    print("Ошибка ввода.")
