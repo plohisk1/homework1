@@ -1,0 +1,23 @@
+rating = input("Введите рейтинг продукта (от 1 до 10): ")
+
+""" Сопоставляем строку напрямую + любой некорректный ввод отпрвациа в case _"""
+match rating:
+    case "10" | "9":                                                          # объединение значений через |
+        text, emoji, advice = "отличный", "🤩", "рекомендую"
+    case "8" | "7":
+        text, emoji, advice = "хороший", "👍", "рекомендую"
+    case "6" | "5":
+        text, emoji, advice = "средний", "😐", "можно попробовать"
+    case "4" | "3" | "2" | "1":
+        text, emoji, advice = "плохой", "👎", "не рекомендую"
+    case _:                                                                   # некорректное значение
+        text, emoji, advice = None, None, None
+
+if text is not None:
+    print("=" * 100)
+    print(f"  Рейтинг: {rating}/10 {emoji}")
+    print(f"  Оценка: {text}")
+    print(f"  Рекомендация: {advice}")
+    print("=" * 100)
+else:
+    print("Ошибка: рейтинг должен быть целым числом от 1 до 10.")
