@@ -1,0 +1,25 @@
+import random
+
+# Программа загадывает число от 1 до 10
+secret_number = random.randint(1, 10)
+
+# Даём пользователю 3 попытки
+for attempt in range(3):
+    try:
+        guess = int(input())
+    except ValueError:
+        print("Неверно")
+        continue
+
+    if guess == secret_number:
+        print("Угадали!")
+        break
+    else:
+        # Подсказываем направление
+        if guess < secret_number:
+            print("Неверно, загаданное число больше")
+        else:
+            print("Неверно, загаданное число меньше")
+else:
+    # Этот блок выполнится, если цикл завершился без break (т.е. все 3 попытки неудачны)
+    print(f"Вы не угадали. Загаданное число: {secret_number}")
