@@ -1,0 +1,8 @@
+chotnie_chisla = True
+
+for i in range(10):
+    n = int(input("Введите число: "))
+    if n % 2 != 0:
+        chotnie_chisla = False
+
+print("YES" if chotnie_chisla else "NO")
