@@ -1,0 +1,15 @@
+name = input("Введите имя участника (пустая строка — конец): ")
+count = 0
+after_alexandra = False
+
+while name:
+    if name == "Александра":
+        after_alexandra = True
+    elif name == "Левон":
+        break
+    elif after_alexandra:
+        count += 1
+
+    name = input("Введите имя участника (пустая строка — конец): ")
+
+print(f"Между Александрой и Левоном стоит человек: {count}")
