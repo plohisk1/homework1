@@ -1,0 +1,42 @@
+n = input("Введите натуральное число: ")
+
+last = n[-1]         # последняя цифра
+
+count3 = 0            # сколько раз встречается 3
+count_last = 0        # сколько раз встречается последняя цифра
+count_even = 0        # количество чётных цифр
+sum_big = 0           # сумма цифр, больших пяти
+prod_big = 1          # произведение цифр, больших семи
+count_05 = 0          # суммарно сколько раз встречаются 0 и 5
+
+for digit in n:
+    if digit == "3":
+        count3 += 1
+        print(f"  нашли цифру 3 (позиция {n.index(digit) + 1})")
+
+    if digit == last:
+        count_last += 1
+        print(f"  цифра {digit} совпадает с последней")
+
+    if digit in "02468":
+        count_even += 1
+        print(f"  цифра {digit} чётная")
+
+    if digit > "5":
+        sum_big += int(digit)
+        print(f"  цифра {digit} больше пяти — добавляем к сумме")
+
+    if digit > "7":
+        prod_big *= int(digit)
+        print(f"  цифра {digit} больше семи — умножаем")
+
+    if digit == "0" or digit == "5":
+        count_05 += 1
+        print(f"  цифра {digit} — 0 или 5, считаем")
+
+print(f"1. Количество цифр 3: {count3}")
+print(f"2. Последняя цифра {last} встречается раз: {count_last}")
+print(f"3. Количество чётных цифр: {count_even}")
+print(f"4. Сумма цифр больше пяти: {sum_big}")
+print(f"5. Произведение цифр больше семи: {prod_big}")
+print(f"6. Суммарно цифр 0 и 5: {count_05}")
