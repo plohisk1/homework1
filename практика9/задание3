@@ -1,0 +1,15 @@
+tugriki = int(input("Введите цену за услуги ведьмака: "))
+shekeley = 0
+
+shekeley += tugriki // 25
+tugriki %= 25
+
+shekeley += tugriki // 10
+tugriki %= 10
+
+shekeley += tugriki // 5
+tugriki %= 5
+
+shekeley += tugriki
+
+print(f"Минимальное количество монет: {shekeley}")
