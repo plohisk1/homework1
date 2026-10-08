@@ -1,0 +1,23 @@
+s = input()
+last = s[-1]
+
+c3 = len([ch for ch in s if ch == '3'])          # сколько цифр 3
+clast = len([ch for ch in s if ch == last])      # сколько раз встречается последняя цифра
+even = len([ch for ch in s if int(ch) % 2 == 0]) # чётные цифры
+sum5 = sum(int(ch) for ch in s if int(ch) > 5)   # сумма цифр > 5
+
+prod = 1                                         # произведение цифр > 7
+has = 0
+for ch in s:
+    if int(ch) > 7:
+        prod *= int(ch)
+        has += 1
+
+c05 = len([ch for ch in s if ch in '05'])        # цифры 0 и 5 вместе
+
+print(c3)
+print(clast)
+print(even)
+print(sum5)
+print(prod if has else 1)                        # цифр >7 нет -> 1
+print(c05)
