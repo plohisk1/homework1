@@ -1,0 +1,29 @@
+fifth = {i**5: i for i in range(1, 151)}   # значению -> число
+arr = [0] + [i**5 for i in range(1, 151)]
+
+e = 1
+found = False
+while e <= 150 and not found:
+    e5 = arr[e]
+    a = 1
+    while a < e:
+        a5 = arr[a]
+        b = a
+        while b < e:
+            ab = a5 + arr[b]
+            if ab >= e5:
+                break
+            c = b
+            while c < e:
+                rem = e5 - ab - arr[c]     # остаток (это должна быть 5-я степень d)
+                if rem < 0:
+                    break
+                d = fifth.get(rem)         # None, если остаток не 5-я степень
+                if d is not None and d >= c and d <= e:
+                    print(a + b + c + d + e)
+                    found = True
+                    break
+                c += 1
+            b += 1
+        a += 1
+    e += 1
